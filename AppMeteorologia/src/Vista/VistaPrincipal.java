@@ -17,6 +17,7 @@ import javax.swing.border.TitledBorder;
 public class VistaPrincipal extends JFrame {
 
 	private JPanel contentPane;
+	
 
 	/**
 	 * Launch the application.
@@ -41,11 +42,12 @@ public class VistaPrincipal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 932, 699);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(102, 255, 51));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(700, 68, 176, 31);
+		comboBox.setBounds(670, 68, 176, 31);
 	contentPane.add(comboBox);
 		
 		JPanel panel = new JPanel();
@@ -141,5 +143,14 @@ public class VistaPrincipal extends JFrame {
 		lblNewLabel.setBounds(10, 23, 518, 373);
 		panel_2.add(lblNewLabel);
 		lblNewLabel.setIcon(new ImageIcon("imagenes/1.jpg"));
+		
+		JLabel lblNewLabel_10 = new JLabel("");
+		lblNewLabel_10.setIcon(new ImageIcon("imagenes/sky-g2ffcc1c93_1920.jpg"));
+		lblNewLabel_10.setBounds(0, 0, 916, 660);
+		contentPane.add(lblNewLabel_10);
+		
+		
+		
+		
 	}
 }
