@@ -9,16 +9,17 @@ import javax.swing.ImageIcon;
 
 import Modelo.Conexion;
 import Vista.VentanaPrincipal;
+import Vista.VistaPrincipal;
 
 
 
 public class Controlador implements ActionListener{
 
 	
-	VentanaPrincipal ventana = new VentanaPrincipal(); // creamos el objeto de la ventana principal
+	VistaPrincipal ventana = new VistaPrincipal(); // creamos el objeto de la ventana principal
 	
 	
-	public Controlador(VentanaPrincipal ventana) { // constructor del controlador
+	public Controlador(VistaPrincipal ventana) { // constructor del controlador
 		
 		this.ventana = ventana;
 		this.ventana.comboBox.addActionListener(this);
