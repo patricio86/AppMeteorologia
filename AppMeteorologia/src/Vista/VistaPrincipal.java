@@ -140,6 +140,6 @@ public class VistaPrincipal extends JFrame {
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(10, 23, 518, 373);
 		panel_2.add(lblNewLabel);
-		lblNewLabel.setIcon(new ImageIcon("../AppMeteorologia/AppMeteorologia/imagenes/1.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("imagenes/1.jpg"));
 	}
 }
