@@ -39,10 +39,12 @@ public class VistaPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public VistaPrincipal() {
+		setBackground(new Color(255, 0, 102));
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 932, 699);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(102, 255, 51));
+		contentPane.setBackground(new Color(204, 255, 255));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
@@ -145,8 +147,9 @@ public class VistaPrincipal extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon("imagenes/1.jpg"));
 		
 		JLabel lblNewLabel_10 = new JLabel("");
+		lblNewLabel_10.setBackground(new Color(153, 255, 255));
 		lblNewLabel_10.setIcon(new ImageIcon("imagenes/sky-g2ffcc1c93_1920.jpg"));
-		lblNewLabel_10.setBounds(0, 0, 916, 660);
+		lblNewLabel_10.setBounds(0, 0, 930, 671);
 		contentPane.add(lblNewLabel_10);
 		
 		
