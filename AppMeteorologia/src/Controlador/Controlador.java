@@ -40,11 +40,11 @@ public class Controlador implements ActionListener{
 				c1.urlString("valdepenas");
 				
 				
-				ventana.panel_1.setBorder(new TitledBorder(null, c1.getDiast().get(1).getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null)); // fecha 2 dia
-				ventana.panel_2.setBorder(new TitledBorder(null, c1.getDiast().get(2).getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null));
-				ventana.panel_3.setBorder(new TitledBorder(null, c1.getDiast().get(3).getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null));
-				ventana.panel_4.setBorder(new TitledBorder(null, c1.getDiast().get(4).getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null));
-				ventana.panel_5.setBorder(new TitledBorder(null, c1.getDiast().get(5).getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+				ventana.panel_1.setBorder(new TitledBorder(null, c1.getDiast().get(0).getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null)); // fecha 2 dia
+				ventana.panel_2.setBorder(new TitledBorder(null, c1.getDiast().get(1).getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+				ventana.panel_3.setBorder(new TitledBorder(null, c1.getDiast().get(2).getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+				ventana.panel_4.setBorder(new TitledBorder(null, c1.getDiast().get(3).getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+				ventana.panel_5.setBorder(new TitledBorder(null, c1.getDiast().get(4).getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 
 				ventana.infotemmax1.setText(c1.getDiast().get(0).getMaxTemp());
 				ventana.infotemmin1.setText(c1.getDiast().get(0).getMinTemp());

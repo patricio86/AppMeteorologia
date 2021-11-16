@@ -87,6 +87,7 @@ public class VistaPrincipal extends JFrame {
 		panel_1.setBorder(new TitledBorder(null, "Fecha1", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
+		panel_1.setOpaque(false);
 		
 		JLabel lbl_1 = new JLabel("T max: ");
 		lbl_1.setBounds(10, 35, 63, 22);
@@ -118,7 +119,7 @@ public class VistaPrincipal extends JFrame {
 		panel_2.setBorder(new TitledBorder(null, "Fecha2", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
-		
+		panel_2.setOpaque(false);
 		
 		
 		JLabel lblNewLabel_1_1 = new JLabel("T max:");
@@ -153,7 +154,7 @@ public class VistaPrincipal extends JFrame {
 		panel_3.setBorder(new TitledBorder(null, "Fecha3", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPane.add(panel_3);
 		panel_3.setLayout(null);
-		
+		panel_3.setOpaque(false);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("T max: ");
 		lblNewLabel_1_1_1.setBounds(10, 30, 48, 22);
@@ -185,6 +186,7 @@ public class VistaPrincipal extends JFrame {
 		panel_4.setBorder(new TitledBorder(null, "Fecha4", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPane.add(panel_4);
 		panel_4.setLayout(null);
+		panel_4.setOpaque(false);
 		
 		JLabel lbl_4= new JLabel("T max: ");
 		lbl_4.setBounds(10, 30, 54, 22);
@@ -216,7 +218,7 @@ public class VistaPrincipal extends JFrame {
 		panel_5.setBorder(new TitledBorder(null, "Fecha5", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPane.add(panel_5);
 		panel_5.setLayout(null);
-		
+		panel_5.setOpaque(false);
 		
 		JLabel lbl_5= new JLabel("T max: ");
 		lbl_5.setBounds(10, 30, 56, 22);
@@ -248,6 +250,7 @@ public class VistaPrincipal extends JFrame {
 		panel_mapa.setBounds(42, 36, 538, 407);
 		contentPane.add(panel_mapa);
 		panel_mapa.setLayout(null);
+		panel_mapa.setOpaque(false);
 		
 		JLabel lblNewLabel_4 = new JLabel("Amsterdam");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -311,7 +314,7 @@ public class VistaPrincipal extends JFrame {
 		JLabel lblNewLabel_10 = new JLabel("");
 		lblNewLabel_10.setBackground(new Color(153, 255, 255));
 		lblNewLabel_10.setIcon(new ImageIcon("imagenes/sky-g2ffcc1c93_1920.jpg"));
-		lblNewLabel_10.setBounds(10, -22, 930, 671);
+		lblNewLabel_10.setBounds(0, -22, 940, 717);
 		contentPane.add(lblNewLabel_10);
 		
 		labelimg = new JLabel("");
