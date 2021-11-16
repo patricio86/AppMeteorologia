@@ -18,7 +18,7 @@ public class Forecastday {
 	@Override
 	public String toString() {
 		return "Forecastday [forecastDay=" + forecastDay + "]";
-	}
+	} 
 
 	
 

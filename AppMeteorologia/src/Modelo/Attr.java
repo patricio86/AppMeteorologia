@@ -1,12 +1,12 @@
 package Modelo;
 
 public class Attr {
-	private String lang;
+	//private String lang;
 	private Object forecast;
 	
 	
 	
-
+/*
 	@Override
 	public String toString() {
 		return "Attr [lang=" + lang + "]";
@@ -19,7 +19,7 @@ public class Attr {
 	public void setLang(String lang) {
 		this.lang = lang;
 	}
-
+*/
 	public Object getForecast() {
 		return forecast;
 	}

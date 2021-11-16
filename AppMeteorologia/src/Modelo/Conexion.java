@@ -1,7 +1,6 @@
 package Modelo;
 
 import java.io.BufferedReader;
-
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,7 +12,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
-import Vista.VistaPrincipal;
+import Vista.VentanaPrincipal;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -22,9 +21,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 import com.google.gson.Gson;
-
-
-
 
 
 public class Conexion {
@@ -40,12 +36,12 @@ public class Conexion {
 	public static void setDiast(ArrayList<Dia> diast) {
 		Conexion.diast = diast;
 	}
+	
 
 	public void urlString(String ciudad) throws IOException {
 		FileReader fr;
 		
 		fr = new FileReader("config.properties");
-		
 		
 		Properties configuracion = new Properties();
 		configuracion.load(fr);
@@ -55,21 +51,17 @@ public class Conexion {
 		
 		
 		pasarUrl(fichero); // lee el fichero json del enlace pasado por parametro
+		
 	}
 	
 	private static void pasarUrl(String enlace) throws MalformedURLException {
 		
-		
-		
-		
 		URL url = new URL(enlace);
 
-		Gson gson = new Gson();
-		 String inputText = "";
+		String inputText = "";
+		
 		try {
-			
-			
-			
+
 			  // Volcamos lo recibido al buffer
 			  BufferedReader in = null;
 			  in = new BufferedReader(new InputStreamReader(url.openStream()));
@@ -81,34 +73,31 @@ public class Conexion {
 				      inputText = inputText + inputLine;
 				     
 				}
+			System.out.println(inputText);
 			} catch(Exception t){
 				t.printStackTrace();
 			}
+		
+		// gson
+		Gson gson = new Gson();
 		Conexion q = new Conexion();
-	
 		
 		City c = gson.fromJson(inputText, City.class);
 		String con = "";
 		con = q.fromObjetToString(c.getCity());
-		System.out.println(c.getCity());
 		
 		
 		Attr c2 = gson.fromJson(con, Attr.class);
-		System.out.println(c2.toString());
-		 // añadimos las iniciales del pais al objeto InfoTiempoCiudad
-		
-		
-		
 		String days = "";
 		days = q.fromObjetToString(c2.getForecast());
-		Forecastday c3 = gson.fromJson(days, Forecastday.class);
 		
-	
+		Forecastday c3 = gson.fromJson(days, Forecastday.class);
+		System.out.println(c3.getForecastDay());
 		for (int i = 0; i < c3.getForecastDay().size(); i++) {
 			String convert = q.fromObjetToString(c3.getForecastDay().get(i));
 			Dia c4 = gson.fromJson(convert, Dia.class);
 			diast.add(c4); // almacenamos cada objeto con la infomación climatologica en el arraylist
-		}
+		 }
 		
 	}
 	
