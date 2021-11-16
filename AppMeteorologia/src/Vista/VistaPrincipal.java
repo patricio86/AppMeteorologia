@@ -1,6 +1,7 @@
 package Vista;
 
 
+import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -8,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
@@ -15,8 +17,11 @@ import javax.swing.JComboBox;
 import javax.swing.border.TitledBorder;
 
 import Controlador.Controlador;
+import javax.swing.JRadioButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-public class VistaPrincipal2 extends JFrame {
+public class VistaPrincipal extends JFrame {
 
 	public JPanel contentPane;
 	public JComboBox comboBox;
@@ -41,23 +46,26 @@ public class VistaPrincipal2 extends JFrame {
 	public JLabel infotemmin5;
 	public JLabel infotemest5;
 	public JLabel labelimg;
+	AudioClip sonido;
+	
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		
-		VistaPrincipal2 frame = new VistaPrincipal2();
+		VistaPrincipal frame = new VistaPrincipal();
 		frame.setVisible(true);
 		//frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// creamos el objeto controlador para enlazar la vista con el modelo
 		Controlador con = new Controlador(frame);
+		
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public VistaPrincipal2() {
+	public VistaPrincipal() {
 		setBackground(new Color(255, 0, 102));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -303,13 +311,41 @@ public class VistaPrincipal2 extends JFrame {
 		JLabel lblNewLabel_10 = new JLabel("");
 		lblNewLabel_10.setBackground(new Color(153, 255, 255));
 		lblNewLabel_10.setIcon(new ImageIcon("imagenes/sky-g2ffcc1c93_1920.jpg"));
-		lblNewLabel_10.setBounds(0, 0, 930, 671);
+		lblNewLabel_10.setBounds(10, -22, 930, 671);
 		contentPane.add(lblNewLabel_10);
 		
 		labelimg = new JLabel("");
 		labelimg.setIcon(new ImageIcon("C:\\Users\\raul\\Desktop\\Trabajo_Accesos_Interfaces\\App_Metereologica\\imagenes\\cordoba.jpg"));
 		labelimg.setBounds(608, 156, 291, 263);
 		contentPane.add(labelimg);
+		
+		JRadioButton btnmusicaon = new JRadioButton("Musica ON");
+		btnmusicaon.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				sonido = java.applet.Applet.newAudioClip(getClass().getResource("/sintoniatiempo.wav"));
+				sonido.play();
+			}
+		});
+		btnmusicaon.setBounds(622, 32, 109, 23);
+		contentPane.add(btnmusicaon);
+		
+		JRadioButton btnmusicaoff = new JRadioButton("Musica OFF");
+		btnmusicaoff.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				sonido.stop();
+			}
+		});		
+		
+		btnmusicaoff.setBounds(761, 32, 109, 23);
+		contentPane.add(btnmusicaoff);
+		
+		ButtonGroup gsonido = new ButtonGroup();
+		gsonido.add(btnmusicaon);
+		gsonido.add(btnmusicaoff);
+		
+		
 		
 	}
 }
