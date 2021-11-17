@@ -1,12 +1,12 @@
 package Modelo;
 
 import java.io.BufferedReader;
-
-
+import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.Properties;
 import java.util.Set;
 
@@ -20,13 +20,21 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 import com.google.gson.Gson;
 
 
 public class Conexion {
-	
+	/*
+	public static void main(String[]args) throws IOException {
+		
+		Conexion c = new Conexion();
+		ArrayList<String> urls = c.devolverclaves();
+		System.out.println(urls.toString());
+	}
+	*/
 	public static ArrayList<Dia> diast = new ArrayList<Dia>();
 	
 	
@@ -48,7 +56,7 @@ public class Conexion {
 		Properties configuracion = new Properties();
 		configuracion.load(fr);
 		Set<String> ciudades = configuracion.stringPropertyNames(); // devuelve y almacena las claves en un array de string
-		
+	
 		String fichero = configuracion.getProperty(ciudad); // devuelve el valor(url) en funcion de la clave
 		
 		
@@ -114,5 +122,33 @@ public class Conexion {
 		}
 		return json;
 
+	}
+	
+	public ArrayList<String> devolverclaves() throws IOException {
+		
+		ArrayList<String> urls= new ArrayList<String>();
+		
+		Properties prop = new Properties();
+		InputStream is = null;
+
+		try {
+		  is=new FileInputStream("config.properties");
+		  prop.load(is);
+		} catch(IOException ioe) {
+			ioe.printStackTrace();
+		}
+		
+		Enumeration en = prop.keys();
+		
+		for (Enumeration e = prop.keys(); e.hasMoreElements() ; ) {
+		    // Obtenemos el objeto
+		    Object obj = e.nextElement();
+		    System.out.println(obj + ": " + prop.getProperty(obj.toString()));
+		    
+		    urls.add(prop.getProperty(obj.toString()));
+		    
+		    
+		}
+		return urls;
 	}
 }

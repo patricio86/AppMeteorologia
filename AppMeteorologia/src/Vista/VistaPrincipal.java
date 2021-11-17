@@ -17,9 +17,14 @@ import javax.swing.JComboBox;
 import javax.swing.border.TitledBorder;
 
 import Controlador.Controlador;
+import javafx.scene.control.Button;
+
 import javax.swing.JRadioButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VistaPrincipal extends JFrame {
 
@@ -46,6 +51,14 @@ public class VistaPrincipal extends JFrame {
 	public JLabel infotemmin5;
 	public JLabel infotemest5;
 	public JLabel labelimg;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_3;
+	private JButton btnNewButton_4;
+	private JButton btnNewButton_5;
+	private JButton btnNewButton_6;
+	private JButton btnNewButton_7;
+	private JButton btnNewButton_8;
 	AudioClip sonido;
 	
 	/**
@@ -75,16 +88,25 @@ public class VistaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		labelimg = new JLabel("");
+		labelimg.setIcon(new ImageIcon("imagenes\\"));
+		labelimg.setBounds(608, 156, 291, 263);
+		contentPane.add(labelimg);
+		
 		comboBox = new JComboBox();
 		comboBox.setBounds(670, 68, 176, 31);
-		comboBox.addItem("Córdoba");
-		comboBox.addItem("Ciudad Real");
-		comboBox.addItem("Valdepeñas");
+		comboBox.addItem("Madrid");
+		comboBox.addItem("Lisboa");
+		comboBox.addItem("Roma");
+		comboBox.addItem("Berlin");
+		comboBox.addItem("Londres");
+		comboBox.addItem("Dublin");
+		comboBox.addItem("Amsterdam");
+		comboBox.addItem("Estocolmo");
 		contentPane.add(comboBox);
 		
 		panel_1 = new JPanel();
-		panel_1.setBounds(42, 459, 135, 179);
-		panel_1.setBorder(new TitledBorder(null, "Fecha1", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_1.setBounds(23, 459, 161, 179);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		panel_1.setOpaque(false);
@@ -97,25 +119,25 @@ public class VistaPrincipal extends JFrame {
 		lbl_2.setBounds(10, 67, 48, 13);
 		panel_1.add(lbl_2);
 		
-		JLabel lbl_3 = new JLabel("Est");
-		lbl_3.setBounds(10, 92, 32, 13);
+		JLabel lbl_3 = new JLabel("Estado");
+		lbl_3.setBounds(10, 92, 48, 13);
 		panel_1.add(lbl_3);
 		
 		infotemmax1 = new JLabel("--------");
-		infotemmax1.setBounds(90, 35, 32, 22);
+		infotemmax1.setBounds(52, 35, 32, 22);
 		panel_1.add(infotemmax1);
 		
 		infotemmin1 = new JLabel("--------");
-		infotemmin1.setBounds(90, 60, 35, 22);
+		infotemmin1.setBounds(52, 62, 35, 22);
 		panel_1.add(infotemmin1);
 		
 		infotemest1 = new JLabel("----------");
-		infotemest1.setBounds(90, 90, 35, 22);
+		infotemest1.setBounds(10, 117, 141, 22);
 		panel_1.add(infotemest1);
 		
 		
 		panel_2 = new JPanel();
-		panel_2.setBounds(205, 459, 135, 179);
+		panel_2.setBounds(193, 459, 163, 179);
 		panel_2.setBorder(new TitledBorder(null, "Fecha2", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
@@ -131,26 +153,26 @@ public class VistaPrincipal extends JFrame {
 		panel_2.add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Estado");
-		lblNewLabel_3_1.setBounds(10, 87, 52, 13);
+		lblNewLabel_3_1.setBounds(10, 95, 52, 13);
 		panel_2.add(lblNewLabel_3_1);
 		
 		
 		infotemmax2 = new JLabel("-------");
-		infotemmax2.setBounds(90, 35, 35, 22);
+		infotemmax2.setBounds(54, 32, 35, 22);
 		panel_2.add(infotemmax2);
 		
 		infotemmin2 = new JLabel("---------");
-		infotemmin2.setBounds(90, 60, 35, 22);
+		infotemmin2.setBounds(54, 59, 35, 22);
 		panel_2.add(infotemmin2);
 		
 		infotemest2 = new JLabel("---------");
-		infotemest2.setBounds(90, 90, 35, 22);
+		infotemest2.setBounds(10, 118, 143, 18);
 		panel_2.add(infotemest2);
 		
 
 		
 		panel_3 = new JPanel();
-		panel_3.setBounds(366, 459, 135, 179);
+		panel_3.setBounds(366, 459, 171, 179);
 		panel_3.setBorder(new TitledBorder(null, "Fecha3", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPane.add(panel_3);
 		panel_3.setLayout(null);
@@ -169,20 +191,20 @@ public class VistaPrincipal extends JFrame {
 		panel_3.add(lblNewLabel_3_1_1);
 		
 		infotemmax3 = new JLabel("-------");
-		infotemmax3.setBounds(60, 35, 45, 13);
+		infotemmax3.setBounds(50, 35, 45, 13);
 		panel_3.add(infotemmax3);
 		
 		infotemmin3 = new JLabel("-------");
-		infotemmin3.setBounds(60, 62, 45, 13);
+		infotemmin3.setBounds(50, 62, 45, 13);
 		panel_3.add(infotemmin3);
 		
 		infotemest3 = new JLabel("-------");
-		infotemest3.setBounds(60, 91, 45, 13);
+		infotemest3.setBounds(10, 121, 151, 13);
 		panel_3.add(infotemest3);
 		
 
 		panel_4 = new JPanel();
-		panel_4.setBounds(530, 459, 135, 179);
+		panel_4.setBounds(547, 459, 167, 179);
 		panel_4.setBorder(new TitledBorder(null, "Fecha4", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPane.add(panel_4);
 		panel_4.setLayout(null);
@@ -201,20 +223,20 @@ public class VistaPrincipal extends JFrame {
 		panel_4.add(lbl_25);
 		
 		infotemmax4 = new JLabel("------");
-		infotemmax4.setBounds(64, 35, 45, 13);
+		infotemmax4.setBounds(48, 35, 45, 13);
 		panel_4.add(infotemmax4);
 		
 		infotemmin4 = new JLabel("------");
-		infotemmin4.setBounds(64, 62, 45, 13);
+		infotemmin4.setBounds(48, 63, 45, 13);
 		panel_4.add(infotemmin4);
 		
 		infotemest4 = new JLabel("------");
-		infotemest4.setBounds(64, 91, 45, 13);
+		infotemest4.setBounds(10, 115, 147, 13);
 		panel_4.add(infotemest4);
 		
 		
 		panel_5 = new JPanel();
-		panel_5.setBounds(700, 459, 135, 179);
+		panel_5.setBounds(724, 459, 175, 179);
 		panel_5.setBorder(new TitledBorder(null, "Fecha5", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPane.add(panel_5);
 		panel_5.setLayout(null);
@@ -233,15 +255,15 @@ public class VistaPrincipal extends JFrame {
 		panel_5.add(lbl_35);
 		
 		infotemmax5 = new JLabel("-----");
-		infotemmax5.setBounds(67, 35, 45, 13);
+		infotemmax5.setBounds(51, 35, 114, 13);
 		panel_5.add(infotemmax5);
 		
 		infotemmin5 = new JLabel("-----");
-		infotemmin5.setBounds(67, 62, 45, 13);
+		infotemmin5.setBounds(51, 62, 114, 13);
 		panel_5.add(infotemmin5);
 		
 		infotemest5 = new JLabel("-----");
-		infotemest5.setBounds(67, 91, 45, 13);
+		infotemest5.setBounds(10, 115, 155, 13);
 		panel_5.add(infotemest5);
 		
 			
@@ -252,59 +274,65 @@ public class VistaPrincipal extends JFrame {
 		panel_mapa.setLayout(null);
 		panel_mapa.setOpaque(false);
 		
-		JLabel lblNewLabel_4 = new JLabel("Amsterdam");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_4.setForeground(new Color(255, 0, 0));
-		lblNewLabel_4.setBounds(271, 185, 92, 16);
-		panel_mapa.add(lblNewLabel_4);
+		btnNewButton_6 = new JButton("Amsterdam");
+		btnNewButton_6.setOpaque(false);
+		btnNewButton_6.setBorderPainted(false);
+		btnNewButton_6.setContentAreaFilled(false);
+		btnNewButton_6.setBounds(250, 218, 117, 23);
+		panel_mapa.add(btnNewButton_6);
 		
-		JLabel lblNewLabel_1 = new JLabel("Madrid");
-		lblNewLabel_1.setBounds(172, 346, 44, 16);
-		panel_mapa.add(lblNewLabel_1);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_1.setForeground(new Color(255, 0, 0));
+		btnNewButton_7 = new JButton("Berlin");
+		btnNewButton_7.setOpaque(false);
+		btnNewButton_7.setBorderPainted(false);
+		btnNewButton_7.setContentAreaFilled(false);
+		btnNewButton_7.setBounds(334, 237, 89, 23);
+		panel_mapa.add(btnNewButton_7);
 		
-		JLabel lblNewLabel_7 = new JLabel("Lisboa");
-		lblNewLabel_7.setBounds(86, 361, 46, 16);
-		panel_mapa.add(lblNewLabel_7);
-		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_7.setForeground(new Color(255, 0, 0));
+		btnNewButton_4 = new JButton("Londres");
+		btnNewButton_4.setOpaque(false);
+		btnNewButton_4.setBorderPainted(false);
+		btnNewButton_4.setContentAreaFilled(false);
+		btnNewButton_4.setBounds(207, 202, 89, 23);
+		panel_mapa.add(btnNewButton_4);
 		
-		JLabel lblNewLabel_2 = new JLabel("Paris");
-		lblNewLabel_2.setBounds(260, 267, 46, 14);
-		panel_mapa.add(lblNewLabel_2);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_2.setForeground(new Color(255, 0, 0));
+		btnNewButton_8 = new JButton("Estocolmo");
+		btnNewButton_8.setOpaque(false);
+		btnNewButton_8.setBorderPainted(false);
+		btnNewButton_8.setContentAreaFilled(false);
+		btnNewButton_8.setBounds(394, 148, 114, 23);
+		panel_mapa.add(btnNewButton_8);
 		
-		JLabel lblNewLabel_3 = new JLabel("Roma");
-		lblNewLabel_3.setBounds(319, 362, 46, 14);
-		panel_mapa.add(lblNewLabel_3);
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_3.setForeground(new Color(255, 0, 0));
+		btnNewButton_1 = new JButton("Lisboa");
+		btnNewButton_1.setOpaque(false);
+		btnNewButton_1.setBorderPainted(false);
+		btnNewButton_1.setContentAreaFilled(false);
+		btnNewButton_1.setBounds(35, 325, 89, 23);
+		panel_mapa.add(btnNewButton_1);
 		
-		JLabel lblNewLabel_5 = new JLabel("Londres");
-		lblNewLabel_5.setBounds(195, 198, 66, 14);
-		panel_mapa.add(lblNewLabel_5);
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_5.setForeground(new Color(255, 0, 0));
+		btnNewButton_5 = new JButton("Dublin");
+		btnNewButton_5.setOpaque(false);
+		btnNewButton_5.setBorderPainted(false);
+		btnNewButton_5.setContentAreaFilled(false);
+		btnNewButton_5.setBounds(133, 182, 89, 23);
+		panel_mapa.add(btnNewButton_5);
 		
-		JLabel lblNewLabel_9 = new JLabel("Dublin");
-		lblNewLabel_9.setBounds(148, 168, 46, 14);
-		panel_mapa.add(lblNewLabel_9);
-		lblNewLabel_9.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_9.setForeground(new Color(255, 0, 0));
+		btnNewButton_3 = new JButton("Roma");
+		btnNewButton_3.setOpaque(false);
+		btnNewButton_3.setBorderPainted(false);
+		btnNewButton_3.setContentAreaFilled(false);
+		btnNewButton_3.setBounds(290, 362, 89, 23);
+		panel_mapa.add(btnNewButton_3);
 		
-		JLabel lblNewLabel_6 = new JLabel("Berlin");
-		lblNewLabel_6.setBounds(365, 228, 46, 14);
-		panel_mapa.add(lblNewLabel_6);
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_6.setForeground(new Color(255, 0, 0));
+		btnNewButton = new JButton("Madrid");
+		btnNewButton.setOpaque(false);
+		btnNewButton.setBorderPainted(false);
+		btnNewButton.setContentAreaFilled(false);
 		
-		JLabel lblNewLabel_8 = new JLabel("Estocolmo");
-		lblNewLabel_8.setBounds(412, 93, 79, 14);
-		panel_mapa.add(lblNewLabel_8);
-		lblNewLabel_8.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_8.setForeground(new Color(255, 0, 0));
+		btnNewButton.setBounds(133, 325, 89, 23);
+		panel_mapa.add(btnNewButton);
+		
+		
+		
 		
 		JLabel mapa = new JLabel("");
 		mapa.setBounds(10, 23, 518, 373);
@@ -316,11 +344,6 @@ public class VistaPrincipal extends JFrame {
 		lblNewLabel_10.setIcon(new ImageIcon("imagenes/sky-g2ffcc1c93_1920.jpg"));
 		lblNewLabel_10.setBounds(0, -22, 940, 717);
 		contentPane.add(lblNewLabel_10);
-		
-		labelimg = new JLabel("");
-		labelimg.setIcon(new ImageIcon("C:\\Users\\raul\\Desktop\\Trabajo_Accesos_Interfaces\\App_Metereologica\\imagenes\\cordoba.jpg"));
-		labelimg.setBounds(608, 156, 291, 263);
-		contentPane.add(labelimg);
 		
 		JRadioButton btnmusicaon = new JRadioButton("Musica ON");
 		btnmusicaon.addMouseListener(new MouseAdapter() {
