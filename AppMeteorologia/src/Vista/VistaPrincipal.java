@@ -274,6 +274,38 @@ public class VistaPrincipal extends JFrame {
 		panel_mapa.setLayout(null);
 		panel_mapa.setOpaque(false);
 		
+		JLabel lblTiempolondres = new JLabel("");
+		lblTiempolondres.setBounds(226, 177, 46, 14);
+		panel_mapa.add(lblTiempolondres);
+		
+		JLabel lblTiempoamsterdam = new JLabel("");
+		lblTiempoamsterdam.setBounds(290, 193, 46, 14);
+		panel_mapa.add(lblTiempoamsterdam);
+		
+		JLabel lblTiempodublin = new JLabel("");
+		lblTiempodublin.setBounds(153, 165, 46, 14);
+		panel_mapa.add(lblTiempodublin);
+		
+		JLabel lblTiempoestocolmo = new JLabel("");
+		lblTiempoestocolmo.setBounds(439, 123, 46, 14);
+		panel_mapa.add(lblTiempoestocolmo);
+		
+		JLabel lblTiempomadrid = new JLabel("");
+		lblTiempomadrid.setBounds(153, 300, 46, 14);
+		panel_mapa.add(lblTiempomadrid);
+		
+		JLabel lblTiempoberlin = new JLabel("");
+		lblTiempoberlin.setBounds(365, 222, 46, 14);
+		panel_mapa.add(lblTiempoberlin);
+		
+		JLabel lblTiempolisboa = new JLabel("");
+		lblTiempolisboa.setBounds(42, 297, 46, 14);
+		panel_mapa.add(lblTiempolisboa);
+		
+		JLabel lblTiemporoma = new JLabel("");
+		lblTiemporoma.setBounds(315, 344, 46, 14);
+		panel_mapa.add(lblTiemporoma);
+		
 		btnNewButton_6 = new JButton("Amsterdam");
 		btnNewButton_6.setOpaque(false);
 		btnNewButton_6.setBorderPainted(false);
