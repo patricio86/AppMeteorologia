@@ -25,6 +25,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.border.EtchedBorder;
 
 public class VistaPrincipal extends JFrame {
 
@@ -106,6 +107,7 @@ public class VistaPrincipal extends JFrame {
 		contentPane.add(comboBox);
 		
 		panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(null, "Fecha1", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_1.setBounds(23, 459, 161, 179);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
@@ -268,7 +270,7 @@ public class VistaPrincipal extends JFrame {
 		
 			
 		JPanel panel_mapa = new JPanel();
-		panel_mapa.setBorder(new TitledBorder(null, "Mapa", TitledBorder.LEADING, TitledBorder.TOP, null, Color.RED));
+		panel_mapa.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Tiempo para hoy", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(255, 0, 0)));
 		panel_mapa.setBounds(42, 36, 538, 407);
 		contentPane.add(panel_mapa);
 		panel_mapa.setLayout(null);
