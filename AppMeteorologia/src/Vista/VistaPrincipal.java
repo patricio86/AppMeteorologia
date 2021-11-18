@@ -22,6 +22,8 @@ import javafx.scene.control.Button;
 import javax.swing.JRadioButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -60,12 +62,15 @@ public class VistaPrincipal extends JFrame {
 	private JButton btnNewButton_6;
 	private JButton btnNewButton_7;
 	private JButton btnNewButton_8;
+	public JLabel iclondres, icamsterdan, icmadrid, icestocol, icroma, icdublin, icberlin, iclisboa;
+	
 	AudioClip sonido;
 	
 	/**
 	 * Launch the application.
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		VistaPrincipal frame = new VistaPrincipal();
 		frame.setVisible(true);
@@ -276,57 +281,65 @@ public class VistaPrincipal extends JFrame {
 		panel_mapa.setLayout(null);
 		panel_mapa.setOpaque(false);
 		
-		JLabel lblTiempolondres = new JLabel("");
-		lblTiempolondres.setBounds(226, 177, 46, 14);
-		panel_mapa.add(lblTiempolondres);
+		iclondres = new JLabel("");
+		iclondres.setIcon(new ImageIcon("imagenes\\cubierto.png"));
+		iclondres.setBounds(225, 135, 46, 43);
+		panel_mapa.add(iclondres);
 		
-		JLabel lblTiempoamsterdam = new JLabel("");
-		lblTiempoamsterdam.setBounds(290, 193, 46, 14);
-		panel_mapa.add(lblTiempoamsterdam);
+		icamsterdan = new JLabel("");
+		icamsterdan.setIcon(new ImageIcon("imagenes\\intervaloslluvioso.png"));
+		icamsterdan.setBounds(283, 165, 71, 45);
+		panel_mapa.add(icamsterdan);
 		
-		JLabel lblTiempodublin = new JLabel("");
-		lblTiempodublin.setBounds(153, 165, 46, 14);
-		panel_mapa.add(lblTiempodublin);
+		icdublin = new JLabel("");
+		icdublin.setIcon(new ImageIcon("imagenes\\nuboso.png"));
+		icdublin.setBounds(155, 109, 60, 49);
+		panel_mapa.add(icdublin);
 		
-		JLabel lblTiempoestocolmo = new JLabel("");
-		lblTiempoestocolmo.setBounds(439, 123, 46, 14);
-		panel_mapa.add(lblTiempoestocolmo);
+		icestocol = new JLabel("");
+		icestocol.setIcon(new ImageIcon("imagenes\\intervalossoleado.png"));
+		icestocol.setBounds(461, 109, 55, 43);
+		panel_mapa.add(icestocol);
 		
-		JLabel lblTiempomadrid = new JLabel("");
-		lblTiempomadrid.setBounds(153, 300, 46, 14);
-		panel_mapa.add(lblTiempomadrid);
+		icmadrid = new JLabel("");
+		icmadrid.setIcon(new ImageIcon("imagenes\\soleado.png"));
+		icmadrid.setBounds(172, 286, 41, 39);
+		panel_mapa.add(icmadrid);
 		
-		JLabel lblTiempoberlin = new JLabel("");
-		lblTiempoberlin.setBounds(365, 222, 46, 14);
-		panel_mapa.add(lblTiempoberlin);
+		icberlin = new JLabel("");
+		icberlin.setIcon(new ImageIcon("imagenes\\intervalossoleado.png"));
+		icberlin.setBounds(353, 162, 88, 65);
+		panel_mapa.add(icberlin);
 		
-		JLabel lblTiempolisboa = new JLabel("");
-		lblTiempolisboa.setBounds(42, 297, 46, 14);
-		panel_mapa.add(lblTiempolisboa);
+		iclisboa = new JLabel("");
+		iclisboa.setIcon(new ImageIcon("imagenes\\soleado.png"));
+		iclisboa.setBounds(105, 299, 52, 36);
+		panel_mapa.add(iclisboa);
 		
-		JLabel lblTiemporoma = new JLabel("");
-		lblTiemporoma.setBounds(315, 344, 46, 14);
-		panel_mapa.add(lblTiemporoma);
+		icroma = new JLabel("");
+		icroma.setIcon(new ImageIcon("imagenes\\intervalossoleado.png"));
+		icroma.setBounds(315, 315, 46, 43);
+		panel_mapa.add(icroma);
 		
 		btnNewButton_6 = new JButton("Amsterdam");
 		btnNewButton_6.setOpaque(false);
 		btnNewButton_6.setBorderPainted(false);
 		btnNewButton_6.setContentAreaFilled(false);
-		btnNewButton_6.setBounds(250, 218, 117, 23);
+		btnNewButton_6.setBounds(237, 204, 117, 23);
 		panel_mapa.add(btnNewButton_6);
 		
 		btnNewButton_7 = new JButton("Berlin");
 		btnNewButton_7.setOpaque(false);
 		btnNewButton_7.setBorderPainted(false);
 		btnNewButton_7.setContentAreaFilled(false);
-		btnNewButton_7.setBounds(334, 237, 89, 23);
+		btnNewButton_7.setBounds(326, 217, 89, 23);
 		panel_mapa.add(btnNewButton_7);
 		
 		btnNewButton_4 = new JButton("Londres");
 		btnNewButton_4.setOpaque(false);
 		btnNewButton_4.setBorderPainted(false);
 		btnNewButton_4.setContentAreaFilled(false);
-		btnNewButton_4.setBounds(207, 202, 89, 23);
+		btnNewButton_4.setBounds(165, 169, 89, 23);
 		panel_mapa.add(btnNewButton_4);
 		
 		btnNewButton_8 = new JButton("Estocolmo");
@@ -340,14 +353,14 @@ public class VistaPrincipal extends JFrame {
 		btnNewButton_1.setOpaque(false);
 		btnNewButton_1.setBorderPainted(false);
 		btnNewButton_1.setContentAreaFilled(false);
-		btnNewButton_1.setBounds(35, 325, 89, 23);
+		btnNewButton_1.setBounds(68, 336, 89, 23);
 		panel_mapa.add(btnNewButton_1);
 		
 		btnNewButton_5 = new JButton("Dublin");
 		btnNewButton_5.setOpaque(false);
 		btnNewButton_5.setBorderPainted(false);
 		btnNewButton_5.setContentAreaFilled(false);
-		btnNewButton_5.setBounds(133, 182, 89, 23);
+		btnNewButton_5.setBounds(86, 135, 89, 23);
 		panel_mapa.add(btnNewButton_5);
 		
 		btnNewButton_3 = new JButton("Roma");

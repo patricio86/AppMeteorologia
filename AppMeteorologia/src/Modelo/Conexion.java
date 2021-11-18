@@ -27,17 +27,19 @@ import com.google.gson.Gson;
 
 
 public class Conexion {
+	
+	
+	
+	public static ArrayList<Dia> diast = new ArrayList<Dia>();
+	public static ArrayList<Dia> diaCiudades = new ArrayList<Dia>();
+	
 	/*
-	public static void main(String[]args) throws IOException {
-		
+	public static void main(String[] args) throws IOException {
 		Conexion c = new Conexion();
 		ArrayList<String> urls = c.devolverclaves();
-		System.out.println(urls.toString());
+		c.diaCiudades(urls);
 	}
 	*/
-	public static ArrayList<Dia> diast = new ArrayList<Dia>();
-	
-	
 	
 	public static ArrayList<Dia> getDiast() {
 		return diast;
@@ -47,6 +49,14 @@ public class Conexion {
 		Conexion.diast = diast;
 	}
 	
+
+	public static ArrayList<Dia> getDiaCiudades() {
+		return diaCiudades;
+	}
+
+	public static void setDiaCiudades(ArrayList<Dia> diaCiudades) {
+		Conexion.diaCiudades = diaCiudades;
+	}
 
 	public void urlString(String ciudad) throws IOException {
 		FileReader fr;
@@ -64,7 +74,7 @@ public class Conexion {
 		
 	}
 	
-	private static void pasarUrl(String enlace) throws MalformedURLException {
+	public void pasarUrl(String enlace) throws MalformedURLException {
 		
 		URL url = new URL(enlace);
 
@@ -83,7 +93,7 @@ public class Conexion {
 				      inputText = inputText + inputLine;
 				     
 				}
-			System.out.println(inputText);
+			//System.out.println(inputText);
 			} catch(Exception t){
 				t.printStackTrace();
 			}
@@ -98,11 +108,12 @@ public class Conexion {
 		
 		
 		Attr c2 = gson.fromJson(con, Attr.class);
+		//System.out.println(c2.getCityName());
 		String days = "";
 		days = q.fromObjetToString(c2.getForecast());
 		
 		Forecastday c3 = gson.fromJson(days, Forecastday.class);
-		System.out.println(c3.getForecastDay());
+		//System.out.println(c3.getForecastDay());
 		for (int i = 0; i < c3.getForecastDay().size(); i++) {
 			String convert = q.fromObjetToString(c3.getForecastDay().get(i));
 			Dia c4 = gson.fromJson(convert, Dia.class);
@@ -143,12 +154,67 @@ public class Conexion {
 		for (Enumeration e = prop.keys(); e.hasMoreElements() ; ) {
 		    // Obtenemos el objeto
 		    Object obj = e.nextElement();
-		    System.out.println(obj + ": " + prop.getProperty(obj.toString()));
+		   // System.out.println(obj + ": " + prop.getProperty(obj.toString()));
 		    
 		    urls.add(prop.getProperty(obj.toString()));
 		    
 		    
 		}
 		return urls;
+	}
+	
+	public void diaCiudades(ArrayList<String> enlaces) throws MalformedURLException {
+		
+		
+			//System.out.println(enlaces.size());
+			for (int i = 0; i < enlaces.size(); i++) {
+				URL url = new URL(enlaces.get(i));
+
+				String inputText = "";
+				
+				try {
+
+					  // Volcamos lo recibido al buffer
+					  BufferedReader in = null;
+					  in = new BufferedReader(new InputStreamReader(url.openStream()));
+					  
+					  String inputLine;
+					 
+					while ((inputLine = in.readLine()) != null) {
+						
+						      inputText = inputText + inputLine;
+						     
+						}
+					// System.out.println(inputText);
+					} catch(Exception t){
+						t.printStackTrace();
+					}
+				
+				// gson
+				Gson gson = new Gson();
+				Conexion q = new Conexion();
+				
+				City c = gson.fromJson(inputText, City.class);
+				String con = "";
+				con = q.fromObjetToString(c.getCity());
+				
+				
+				Attr c2 = gson.fromJson(con, Attr.class);
+				String days = "";
+				days = q.fromObjetToString(c2.getForecast());
+				// System.out.println(c2.getCityName().toString());
+				Forecastday c3 = gson.fromJson(days, Forecastday.class);
+				// System.out.println(c3.getForecastDay());
+				
+					String convert = q.fromObjetToString(c3.getForecastDay().get(0));
+					Dia c4 = gson.fromJson(convert, Dia.class);
+					
+					c4.setCiudad(c2.getCityName().toString());
+					//System.out.println(c4.getWeather());
+					diaCiudades.add(c4);
+					
+				//	System.out.println(diaCiudades.get(i).getCiudad() + " " + diaCiudades.get(i).getWeather());
+			}
+		
 	}
 }

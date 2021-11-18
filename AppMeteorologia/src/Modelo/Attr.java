@@ -3,7 +3,7 @@ package Modelo;
 public class Attr {
 	//private String lang;
 	private Object forecast;
-	
+	private Object cityName;
 	
 	
 /*
@@ -20,8 +20,17 @@ public class Attr {
 		this.lang = lang;
 	}
 */
+	
 	public Object getForecast() {
 		return forecast;
+	}
+
+	public Object getCityName() {
+		return cityName;
+	}
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
 	}
 
 	public void setForecast(Object forecast) {

@@ -5,8 +5,15 @@ public class Dia {
 	private String weather;
 	private String minTemp;
 	private String maxTemp;
+	private String ciudad;
 	
 	
+	public String getCiudad() {
+		return ciudad;
+	}
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
 	public String getForecastDate() {
 		return forecastDate;
 	}
@@ -35,7 +42,7 @@ public class Dia {
 	@Override
 	public String toString() {
 		return "Dias [forecastDate= " + forecastDate+" weather=" + weather + ", minTemp=" + minTemp + ", maxTemp="
-				+ maxTemp + "]";
+				+ maxTemp + " Ciudad: " + ciudad + "]";
 	}
 	
 	
